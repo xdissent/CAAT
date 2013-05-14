@@ -1,5 +1,7 @@
 ##CAAT: Canvas Advanced Animation Tookit##
 
+**Note:** For information about using CAAT in Node.js, please see [node.md](https://github.com/xdissent/node-caat/blob/master/node.md).
+
 CAAT is a director-based Scene graph manager.
 
 It is able to render using Canvas, WebGL and CSS without making changes to the applications that sit on top of it.
