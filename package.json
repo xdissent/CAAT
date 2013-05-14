@@ -29,6 +29,6 @@
     "jsdom": "~0.6.2"
   },
   "scripts": {
-    "prepublish": "./version.compile.sh"
+    "prepublish": "./version.compile.pack.sh"
   }
 }
