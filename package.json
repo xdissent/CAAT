@@ -1,0 +1,32 @@
+{
+  "name": "caat",
+  "description": "CAAT for Node.js",
+  "keywords": [
+    "animation",
+    "graphics",
+    "canvas",
+    "sprites",
+    "games",
+    "caat"
+  ],
+  "version": "0.0.0",
+  "author": "Ibon Tolosana <hyperandroid@gmail.com> (http://labs.hyperandroid.com)",
+  "contributors": [ "Greg Thornton <xdissent@me.com> (http://xdissent.com)" ],
+  "license": "MIT",
+  "homepage": "http://labs.hyperandroid.com/static/caat/",
+  "main": "./build/caat-node.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xdissent/node-caat.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xdissent/node-caat/issues"
+  },
+  "dependencies": {
+    "canvas": "~1.0.2",
+    "jsdom": "~0.6.2"
+  },
+  "scripts": {
+    "prepublish": "./version.compile.sh"
+  }
+}
