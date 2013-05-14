@@ -9,9 +9,11 @@
     "games",
     "caat"
   ],
-  "version": "0.0.0",
+  "version": "0.0.1",
   "author": "Ibon Tolosana <hyperandroid@gmail.com> (http://labs.hyperandroid.com)",
-  "contributors": [ "Greg Thornton <xdissent@me.com> (http://xdissent.com)" ],
+  "contributors": [
+    "Greg Thornton <xdissent@me.com> (http://xdissent.com)"
+  ],
   "license": "MIT",
   "homepage": "http://labs.hyperandroid.com/static/caat/",
   "main": "./build/caat-node.js",
