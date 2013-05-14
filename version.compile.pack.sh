@@ -16,6 +16,7 @@ VERSION=`cat version.nfo`
 FILE_CAAT="${DST_FILE_NAME}.js"
 FILE_CAAT_CSS="${DST_FILE_NAME}-css.js"
 FILE_CAAT_BOX2D="${DST_FILE_NAME}-box2d.js"
+FILE_CAAT_NODE="${DST_FILE_NAME}-node.js"
 
 echo "Packing ${FILE_CAAT}"
 echo "/*" > "${FILE_CAAT}"
@@ -265,3 +266,23 @@ echo "CAAT.ModuleManager.solveAll();" >> "${FILE_CAAT_BOX2D}"
 echo "\nCopying:"
 echo "\tCopying results to ${CAAT_BUILD_DIR}"
 cp ${FILE_CAAT_BOX2D} ${CAAT_BUILD_DIR}
+
+
+
+# node
+
+echo "Packing ${FILE_CAAT_NODE}"
+echo "/*" > "${FILE_CAAT_NODE}"
+cat LICENSE >> "${FILE_CAAT_NODE}"
+echo "\nVersion: ${VERSION}\n" >> "${FILE_CAAT_NODE}"
+echo "Created on:" >> "${FILE_CAAT_NODE}"
+date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S" >> "${FILE_CAAT_NODE}"
+echo "*/\n\n" >> "${FILE_CAAT_NODE}"
+
+more ./src/node.js >> "${FILE_CAAT_NODE}"
+
+# Distribute resulting compiled files
+#
+echo "\nCopying:"
+echo "\tCopying results to ${CAAT_BUILD_DIR}"
+cp ${FILE_CAAT_NODE} ${CAAT_BUILD_DIR}
