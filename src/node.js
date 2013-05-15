@@ -24,6 +24,15 @@ var src = fs.readFileSync(path.resolve(__dirname, 'caat.js'), 'utf8');
 vm.runInContext(src, context, 'caat.js');
 
 // Disable touch/mouse events
-context.CAAT.TOUCH_BEHAVIOR = 0
+context.CAAT.TOUCH_BEHAVIOR = 0;
 
-module.exports = context.CAAT
+// Add Image access
+context.CAAT.Image = Canvas.Image;
+
+// Add Canvas access
+context.CAAT.Canvas = Canvas;
+
+// Fix isArray
+context.isArray = context.Array.isArray;
+
+module.exports = context.CAAT;
