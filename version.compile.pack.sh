@@ -17,6 +17,7 @@ FILE_CAAT="${DST_FILE_NAME}.js"
 FILE_CAAT_CSS="${DST_FILE_NAME}-css.js"
 FILE_CAAT_BOX2D="${DST_FILE_NAME}-box2d.js"
 FILE_CAAT_NODE="${DST_FILE_NAME}-node.js"
+FILE_CAAT_BRWSRFY="${DST_FILE_NAME}-browserify.js"
 
 echo "Packing ${FILE_CAAT}"
 echo "/*" > "${FILE_CAAT}"
@@ -286,3 +287,23 @@ more ./src/node.js >> "${FILE_CAAT_NODE}"
 echo "\nCopying:"
 echo "\tCopying results to ${CAAT_BUILD_DIR}"
 cp ${FILE_CAAT_NODE} ${CAAT_BUILD_DIR}
+
+
+
+# browserify
+
+echo "Packing ${FILE_CAAT_BRWSRFY}"
+echo "/*" > "${FILE_CAAT_BRWSRFY}"
+cat LICENSE >> "${FILE_CAAT_BRWSRFY}"
+echo "\nVersion: ${VERSION}\n" >> "${FILE_CAAT_BRWSRFY}"
+echo "Created on:" >> "${FILE_CAAT_BRWSRFY}"
+date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S" >> "${FILE_CAAT_BRWSRFY}"
+echo "*/\n\n" >> "${FILE_CAAT_BRWSRFY}"
+
+more ./src/browserify.js >> "${FILE_CAAT_BRWSRFY}"
+
+# Distribute resulting compiled files
+#
+echo "\nCopying:"
+echo "\tCopying results to ${CAAT_BUILD_DIR}"
+cp ${FILE_CAAT_BRWSRFY} ${CAAT_BUILD_DIR}
